@@ -18,10 +18,10 @@
             <li><a href="{% url 'uzduotys'%}">Mano užduotys</a></li>
             <li><form action="{% url 'logout' %}?next={% url 'index' %}" method="post">
                 {% csrf_token %}
-                <button type="submit">Logout</button></form></li>
+                <button type="submit">Atsijungti</button></form></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Prisijungti</a></li>
+            <li><a href="{% url 'register' %}">Registracija</a></li>
             {% endif %}
                 </ul>
 
