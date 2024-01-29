@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+
+
+
+<div>
+    <form method="POST">
+        {% load crispy_forms_tags %}
+        {% csrf_token %}
+        <fieldset class="form-group">
+        <legend>Ištrinti užduotį</legend>
+            <h2>Ar tikrai norite ištrinti?</h2>
+            <p> Užduoties įrašymo data: {{ uzduotis.data }}<br> Užduoties numeris: {{ uzduotis.id }}</p>
+        </fieldset>
+        <div class="form-group">
+            <button type="submit">Taip, ištrinti</button>
+            <a href="{% url 'uzduotys' %}">Atšaukti</a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

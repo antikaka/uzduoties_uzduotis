@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+
+<form method="post" action="{% url 'login' %}?next={% url 'index' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+
+<p>Registracija veikia, bet kad nešvaistyt laiko yra dar test vartotojai su sukurtom užduotim</p>
+<table>
+    <tr><th>login</th>
+        <td>admin</td>
+        <td>test1</td>
+        <td>test2</td>
+    </tr>
+    <tr><th>pw</th>
+        <td>admin</td>
+        <td>namas100</td>
+        <td>namas100</td>
+    </tr>
+    </table>
+
+</table>
+{% endblock %}

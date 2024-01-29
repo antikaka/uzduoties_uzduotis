@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+<a href="{% url 'uzduotis_nauja' %}">Nauja užduotis</a>
+{% for uzduotis in uzduotys %}
+<p><a href="{{ uzduotis.id }}"> {{ uzduotis.data }}</a> </p>
+{% endfor %}
+{% endblock %}

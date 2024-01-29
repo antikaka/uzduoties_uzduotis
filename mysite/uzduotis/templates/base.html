@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block "title" %}<title>Užduotuvas</title>{% endblock %}
+</head>
+<body>
+  <div>
+    <div>
+      <div>
+      {% block sidebar %}
+          <table border="0" width="100%">
+              <tr>
+                  <td width="20%" valign="top">
+                          <nav>
+            <ul>
+            <li><a href="{% url 'index' %}">Pradžia</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'uzduotys'%}">Mano užduotys</a></li>
+            <li><form action="{% url 'logout' %}?next={% url 'index' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button></form></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+                </ul>
+
+        </nav>
+     {% endblock %}
+
+                  </td>
+
+
+        <td valign="top">
+            <div>{% block "content" %}{% endblock %}</div>
+        </td>
+    </tr>
+</table>
+
+    </div>
+  </div>
+        </div>
+</body>
+</html>

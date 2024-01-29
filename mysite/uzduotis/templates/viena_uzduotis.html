@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+
+<div>
+    <div>
+    <a href="{% url 'uzduotis_pakeista' viena_uzduotis.id %}">Redaguoti</a>
+            <a href="{% url 'istrinta_uzduotis' viena_uzduotis.id %}">Ištrinti</a>
+</div>
+
+    <h4>Užduoties įrašymo laikas: {{ viena_uzduotis.data }} </h4>
+    <p>Užduotis: {{ viena_uzduotis.uzduoties_tekstas | safe }} </p>
+
+
+
+
+</div>
+{% endblock %}
